@@ -47,7 +47,15 @@ message(STATUS "Static linking with libstdc++.a in ${STDCPP_LIBRARY}")
 target_link_libraries(${PROJECT_NAME} ${STDCPP_LIBRARY})
 
 
-find_library(PTHREAD_LIBRARY NAMES libpthread.a libpthread.dylib)
+IF(NOT(DEFINED XOSX))
+
+     SET(PTHREAD_LIBRARY libpthread.dylib)
+	 ELSE()
+		 find_library(PTHREAD_LIBRARY NAMES libpthread.a libpthread.dylib)
+		 
+
+ENDIF()
+
 target_link_libraries(${PROJECT_NAME} ${PTHREAD_LIBRARY})
 
 # I need this: -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
