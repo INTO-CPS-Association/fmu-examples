@@ -47,13 +47,18 @@ message(STATUS "Static linking with libstdc++.a in ${STDCPP_LIBRARY}")
 target_link_libraries(${PROJECT_NAME} ${STDCPP_LIBRARY})
 
 
-IF(NOT(DEFINED XOSX))
+#IF(NOT(DEFINED XOSX))
+
+if (UNIX)
+        if(APPLE)
+
 
      SET(PTHREAD_LIBRARY libpthread.dylib)
 	 ELSE()
 		 find_library(PTHREAD_LIBRARY NAMES libpthread.a libpthread.dylib)
 		 
 
+ENDIF()
 ENDIF()
 
 target_link_libraries(${PROJECT_NAME} ${PTHREAD_LIBRARY})
@@ -64,6 +69,19 @@ if (WIN32)
 	#windows	
 	set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -static-libstdc++ -static-libgcc")
 endif() 
+
+
+if (UNIX)
+	if(APPLE)
+
+else()
+
+
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+
+endif()
+endif()
 
 set_target_properties(${PROJECT_NAME}
                       PROPERTIES POSITION_INDEPENDENT_CODE ON, PREFIX "")
