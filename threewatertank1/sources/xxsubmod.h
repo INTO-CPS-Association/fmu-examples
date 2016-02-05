@@ -3,13 +3,13 @@
  *
  *  file:  src\xxsubmod.h
  *  subm:  WaterTanks1
- *  model: threetankco
- *  expmt: threetankco
- *  date:  November 6, 2015
- *  time:  2:34:26 pm
- *  user:  INTO-CPS
- *  from:  20-sim 4.5 Professional Single
- *  build: 4.5.4.6171
+ *  model: threetank
+ *  expmt: threetank
+ *  date:  February 3, 2016
+ *  time:  2:33:24 PM
+ *  user:  Controllab Internal
+ *  from:  Controllab Products B.V., 20-sim 4.7 Professional Single
+ *  build: 4.7.1000.6732
  **********************************************************/
 
 /* This file describes the model functions
