@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="WaterTanks2" guid="{25941611-1350-4ca2-8fe8-85d9193c14fd}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="WaterTanks2" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false" canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+<DefaultExperiment startTime="0.0" stopTime="20.0" stepSize="0.02" />
+<ModelVariables>
+<ScalarVariable name="Drain.puddle" valueReference="7" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter1.input" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter1.output1" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter1.output2" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Time.output" valueReference="8" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.inFlow" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.level" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.pipe.e" valueReference="10" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.pipe.f" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.area" valueReference="1" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.gravity" valueReference="2" variability="tunable" causality="parameter">
+<Real start="9.81" />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.liquid_density" valueReference="3" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Valve.valveControl" valueReference="12" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Valve.pipe.e" valueReference="10" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Valve.pipe.f" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Valve.outFlow" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Valve.resistance" valueReference="4" variability="tunable" causality="parameter">
+<Real start="7.0" />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.inFlow" valueReference="11" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.level" valueReference="9" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.outFlow" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.valveControl" valueReference="12" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="puddle" valueReference="13" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="inFlow" valueReference="14" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="Tank3OutFlow" valueReference="15" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="fmuTime" valueReference="16" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="valveControl" valueReference="17" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="level" valueReference="18" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Drain.inFlow" valueReference="21" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Drain.drain_volume" valueReference="19" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.volume_dot" valueReference="22" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.volume" valueReference="20" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="WaterTank3.Tank3.volume_initial" valueReference="6" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="22" />
+<Unknown index="24" />
+<Unknown index="25" />
+<Unknown index="27" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
