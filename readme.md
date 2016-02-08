@@ -3,7 +3,7 @@
 This respository is backed by a build server which output the compiled FMUs to: ...
 
 Each FMU is a folder containing:
- - a `sources` folder
+ - a `sources` folder containing C or C++ source files
  - a `modelDescription.xml` file
  - a copy of the `CMakeLists.txt` file with the name set to the name of the fmu folder
 
