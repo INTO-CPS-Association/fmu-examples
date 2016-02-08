@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="{modelName}" 
+										 guid="{8c4e810f-3df3-4a00-8276-176fa3c9f003}" description="{description}" author="{author}" version="Version 1"
+										 copyright="Copyright Overture tool (Aarhus University)" license="Some Overture FMI License"
+
+generationTool="Overture Tool FMI Exporter" generationDateAndTime="2002-05-30T09:00:00"
+variableNamingConvention="flat" numberOfEventIndicators="0">
+
+
+	
+
+
+	<CoSimulation modelIdentifier="{modelIdentifier}"
+								needsExecutionTool="true" canHandleVariableCommunicationStepSize="true"
+								canInterpolateInputs="false" maxOutputDerivativeOrder="0"
+								canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="true"
+								canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false"
+								canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+
+
+
+	<LogCategories>
+		<Category name="logAll" />
+		<Category name="logError" />
+		<Category name="logFmiCall" />
+
+		<Category name="Protocol" />
+		<Category name="VdmOut" />
+		<Category name="VdmErr" />
+		<Category name="Error" />
+	</LogCategories>
+	
+	
+	<VendorAnnotations>
+		<Tool name="Overture">
+		<Overture>
+			<!-- Set VDM Settings and Properties here -->
+			<Release>vdm-10</Release>
+			<Dialect>vdm_rt</Dialect>
+			
+			<link valueReference="0" name="System.wt3_sensor.level"/>
+			<link valueReference="1" name="System.wt3_valve.valveState"/>
+			<link valueReference="2" name="World.wt3_max"/>
+			<link valueReference="3" name="World.wt3_min"/>		
+			</Overture>
+		</Tool>
+	</VendorAnnotations>
+
+	<ModelVariables>
+
+		<!-- Add values here like -->
+		<!-- ScalarVariable name="Controller.maxLevel" valueReference="0" description="the 
+				 max tank level" causality="parameter" variability="fixed" initial="exact"> 
+				 <Real start="5" /> </ScalarVariable -->
+
+				 <!-- Add inputs like -->
+
+				 <ScalarVariable name="wt3_level"
+												 valueReference="0" description="fg" causality="input"
+												 variability="continuous">
+					 <Real start="0" />
+				 </ScalarVariable>
+				 
+				 
+
+				 <!-- ScalarVariable name="System.valveActuator.valveState" valueReference="4" 
+							description="the tank valve state" causality="output" variability="discrete" 
+							initial="calculated"> <Boolean /> </ScalarVariable -->
+
+
+				 <!-- Add outputs like -->
+				 <ScalarVariable name="wt3_valve" valueReference="1" 
+												 description="fg" causality="output" variability="discrete" 
+												 initial="calculated"> <Boolean /> </ScalarVariable>
+				 
+				 <ScalarVariable name="wt3_max" valueReference="2" description="fg" 
+												 causality="parameter" variability="fixed" initial="exact"> 
+					 <Real start="5" />
+				 </ScalarVariable>
+				 
+				 <ScalarVariable name="wt3_min" valueReference="3" description="fg" 
+												 causality="parameter" variability="fixed" initial="exact"> 
+					 <Real start="5" />
+				 </ScalarVariable>
+
+			 </ModelVariables>
+
+			 <ModelStructure>
+				 
+  <Outputs>
+            <Unknown index="2" />
+        </Outputs>
+			 </ModelStructure>
+
+		 </fmiModelDescription>

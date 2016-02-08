@@ -1,0 +1,17 @@
+class ValveActuator
+
+instance variables
+	
+  public valveState : real := 0.0;
+
+values
+
+  public open  : real = 1.0;
+  public close : real = 0.0;
+
+operations
+
+public setValveState : real ==> ()
+setValveState(s) == valveState := s;
+
+end ValveActuator
