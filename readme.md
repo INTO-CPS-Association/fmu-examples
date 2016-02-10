@@ -24,6 +24,15 @@ sudo apt-get install zip
 sudo apt-get install libpthread-stubs0-dev
 ```
 
+# Checkout
+
+Remember to do:
+
+```bash
+git submodule update --init
+```
+this will fetch the mingw toolchain files
+
 # Compilers
 
 ## MinGW
@@ -34,5 +43,40 @@ sudo apt-get install mingw-w64 g++-mingw-w64
 
 ## OSX
 
+```bash
+# remove existing llvm stuff
+sudo apt-get remove clang-3.4
+sudo apt-get remove --auto-remove clang-3.4
+sudo apt-get remove llvm-3.4
+# install required compilers
+sudo apt-get install gcc g++
+```
+
 https://github.com/tpoechtrager/osxcross
 
+- copy sdk
+- run dependency script `sudo tools/get_dependencies.sh`
+- build `./build_clang.sh`
+
+# FMU
+
+```bash
+sudo apt-get install cmake make
+```
+
+## if the systems cmake is only 2.8
+
+- 1. Installation by a PPA (Upgrade to 3.2)
+```bash
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:george-edison55/cmake-3.x
+sudo apt-get update
+```
+-  When cmake is not yet installed:
+ ```bash
+sudo apt-get install cmake
+```
+- When cmake is already installed:
+ ```bash
+sudo apt-get upgrade
+```
