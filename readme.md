@@ -48,13 +48,15 @@ sudo apt-get install mingw-w64 g++-mingw-w64
 sudo apt-get install gcc g++
 ```
 
-https://github.com/tpoechtrager/osxcross
+See: https://github.com/tpoechtrager/osxcross
 
+- check out repo `cd /var/lib/` `git clone https://github.com/tpoechtrager/osxcross.git`
 - copy sdk
 - run dependency script `sudo tools/get_dependencies.sh`
-- build `./build_clang.sh`
-- add the compiler to the path `echo 'export PATH=$PATH:/home/vagrant/osxcross/target/bin'  >> ~/.bash_profile`
-- also add it for the cmake toolchain `echo 'export OSXCROSS_ROOT=/home/kel/osxcross/target' >> ~/.bash_profile`
+- build `JOBS=4 UNATTENDED=1 ./build.sh`
+- build `JOBS=4 GCC_VERSION=5.2.0 ENABLE_FORTRAN=1 ./build_gcc.sh .`
+- add it for the cmake toolchain `echo 'export OSXCROSS_ROOT=/home/kel/osxcross/target' >> ~/.bash_profile`
+- add the compiler to the path `echo 'export PATH=$PATH:$OSXCROSS_ROOT/bin'  >> ~/.bash_profile`
 - source the profile `source ~/.bash_profile`
 
 
