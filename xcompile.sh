@@ -10,7 +10,7 @@ function compileDarwin
 		rm -rf $B
 		mkdir -p $B
 
-		cmake  -B$B -H$1 -DCMAKE_TOOLCHAIN_FILE=`readlink -f toolchains/osx-gcc.cmake`
+		cmake  -B$B -H$1 -DCMAKE_TOOLCHAIN_FILE=`readlink -f toolchains/osx-gcc.cmake` -DOSXCROSS_ROOT=$OSXCROSS_ROOT
 
 		make -C $B
 
