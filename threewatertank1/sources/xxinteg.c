@@ -3,13 +3,13 @@
  *
  *  file:  src\xxinteg.c
  *  subm:  WaterTanks1
- *  model: threetankco
- *  expmt: threetankco
- *  date:  November 6, 2015
- *  time:  2:34:26 pm
- *  user:  INTO-CPS
- *  from:  20-sim 4.5 Professional Single
- *  build: 4.5.4.6171
+ *  model: threetank
+ *  expmt: threetank
+ *  date:  February 3, 2016
+ *  time:  2:33:24 PM
+ *  user:  Controllab Internal
+ *  from:  Controllab Products B.V., 20-sim 4.7 Professional Single
+ *  build: 4.7.1000.6732
  **********************************************************/
 
 /* This file describes the integration methods
@@ -33,23 +33,14 @@
 extern XXDouble xx_time;
 extern XXDouble xx_step_size;
 
-/* static variables for the different integration methods */
-#ifdef RungeKutta2_METHOD
-static XXDouble xx_q0 [4 + 1];
-#endif
-
-#ifdef RungeKutta4_METHOD
-static XXDouble xx_q0 [4 + 1];
-static XXDouble xx_q1 [4 + 1];
-static XXDouble xx_q2 [4 + 1];
-static XXDouble xx_q3 [4 + 1];
-static XXDouble xx_q4 [4 + 1];
-#endif
+#define xx_STATE_SIZE 4
 
 #ifdef Discrete_METHOD
 /*********************************************************************
- * the initialization of the Discrete integration method
- */
+ * Discrete integration method
+ *********************************************************************/
+
+/* the initialization of the Discrete integration method */
 void XXDiscreteInitialize (void)
 {
 	/* nothing to be done */
@@ -68,12 +59,11 @@ void XXDiscreteStep (void)
 	XXInteger index;
 
 	/* for each of the supplied states */
-	for (index = 0; index < 4; index++)
+	for (index = 0; index < xx_STATE_SIZE; index++)
 	{
 		/* just a move of the new state */
 		xx_s [index] = xx_R [index];
 	}
-
 	/* increment the simulation time */
 	xx_time += xx_step_size;
 
@@ -87,8 +77,10 @@ void XXDiscreteStep (void)
 
 #ifdef Euler_METHOD
 /*********************************************************************
- * the initialization of the Euler integration method
- */
+ * Euler integration method
+ *********************************************************************/
+
+/* the initialization of the Euler integration method */
 void XXEulerInitialize (void)
 {
 	/* nothing to be done */
@@ -107,12 +99,11 @@ void XXEulerStep (void)
 	XXInteger index;
 
 	/* for each of the supplied states */
-	for (index = 0; index < 4; index++)
+	for (index = 0; index < xx_STATE_SIZE; index++)
 	{
 		/* calculate the new state */
 		xx_s [index] = xx_s [index] + xx_R [index] * xx_step_size;
 	}
-
 	/* increment the simulation time */
 	xx_time += xx_step_size;
 
@@ -126,12 +117,16 @@ void XXEulerStep (void)
 
 #ifdef RungeKutta2_METHOD
 /*********************************************************************
- * the initialization of the RungeKutta2 integration method
- */
+ * RungeKutta2 integration method
+ *********************************************************************/
+/* static variables for the selected integration method */
+static XXDouble xx_q0 [xx_STATE_SIZE];
+
+/* the initialization of the RungeKutta2 integration method */
 void XXRungeKutta2Initialize (void)
 {
 	/* empty our static arrays */
-	memset (xx_q0, '\0', (4 + 1) * sizeof (XXDouble));
+	memset (xx_q0, 0, xx_STATE_SIZE * sizeof (XXDouble));
 }
 
 /* the termination of the RungeKutta2 integration method */
@@ -147,49 +142,40 @@ void XXRungeKutta2Step (void)
 	XXInteger index;
 	XXDouble rktime;
 
-	/* check if we have states at all */
-	if (4 > 0)
+	/* This model has 4 states */
+	/*********************************************************************************/
+	/*          calculate intermediate result                                        */
+	/*********************************************************************************/
+
+	/* cache the simulation time */
+	rktime = xx_time;
+
+	/* the q0 will hold the value of the last evaluation. This is used multiple times
+	   so remember the complete state array in this vector. */
+	memcpy (xx_q0, xx_s, xx_STATE_SIZE * sizeof (XXDouble));
+
+	/* calculate f (states, t) * 1/2 * dt  =  rates * 1/2 * dt  */
+	for (index = 0; index < xx_STATE_SIZE; index++)
+	{
+		/* set the new states to use */
+		xx_s [index] = xx_q0 [index] + xx_R [index] * 0.5 * xx_step_size;
+	}
+
+	xx_time = rktime + 0.5 * xx_step_size;
+	xx_major = XXFALSE;
+	XXCalculateDynamic ();
+
+	/* for each state */
+	for (index = 0; index < xx_STATE_SIZE; index++)
 	{
 		/*********************************************************************************/
-		/*          calculate intermediate result                                        */
+		/*          calculate the next state from the intermediate results               */
 		/*********************************************************************************/
 
-		/* cache the simulation time */
-		rktime = xx_time;
-
-		/* the q0 will hold the value of the last evaluation. This is used multiple times
-		   so remember the complete state array in this vector. */
-		memcpy (xx_q0, xx_s, 4 * sizeof (XXDouble));
-
-		/* calculate f (states, t) * 1/2 * dt  =  rates * 1/2 * dt  */
-		for (index = 0; index < 4; index++)
-		{
-			/* set the new states to use */
-			xx_s [index] = xx_q0 [index] + xx_R [index] * 0.5 * xx_step_size;
-		}
-
-		xx_time = rktime + 0.5 * xx_step_size;
-		xx_major = XXFALSE;
-		XXCalculateDynamic ();
-
-		/* for each state */
-		for (index = 0; index < 4; index++)
-		{
-			/*********************************************************************************/
-			/*          calculate the next state from the intermediate results               */
-			/*********************************************************************************/
-
-			/* calculate the next state = classical Runge-Kutta integration step */
-			xx_s [index] = xx_q0 [index] +	xx_R [index] * xx_step_size;
-		}
-		xx_time = rktime + xx_step_size;
+		/* calculate the next state = classical Runge-Kutta integration step */
+		xx_s [index] = xx_q0 [index] +	xx_R [index] * xx_step_size;
 	}
-	else
-	{
-		/* no states in the model */
-		/* increment the simulation time */
-		xx_time += xx_step_size;
-	}
+	xx_time = rktime + xx_step_size;
 
 	xx_major = XXTRUE;
 
@@ -201,16 +187,28 @@ void XXRungeKutta2Step (void)
 
 #ifdef RungeKutta4_METHOD
 /*********************************************************************
+ * RungeKutta4 integration method
+ *********************************************************************/
+/* static variables for the selected integration method */
+static XXDouble xx_q0 [xx_STATE_SIZE];
+static XXDouble xx_q1 [xx_STATE_SIZE];
+static XXDouble xx_q2 [xx_STATE_SIZE];
+static XXDouble xx_q3 [xx_STATE_SIZE];
+static XXDouble xx_q4 [xx_STATE_SIZE];
+
+/*********************************************************************
  * the initialization of the RungeKutta4 integration method
  */
+static const XXDouble OneOverSix = 1.0 / 6.0;
+
 void XXRungeKutta4Initialize (void)
 {
 	/* empty our static arrays */
-	memset (xx_q0, '\0', (4 + 1) * sizeof (XXDouble));
-	memset (xx_q1, '\0', (4 + 1) * sizeof (XXDouble));
-	memset (xx_q2, '\0', (4 + 1) * sizeof (XXDouble));
-	memset (xx_q3, '\0', (4 + 1) * sizeof (XXDouble));
-	memset (xx_q4, '\0', (4 + 1) * sizeof (XXDouble));
+	memset (xx_q0, 0, xx_STATE_SIZE * sizeof (XXDouble));
+	memset (xx_q1, 0, xx_STATE_SIZE * sizeof (XXDouble));
+	memset (xx_q2, 0, xx_STATE_SIZE * sizeof (XXDouble));
+	memset (xx_q3, 0, xx_STATE_SIZE * sizeof (XXDouble));
+	memset (xx_q4, 0, xx_STATE_SIZE * sizeof (XXDouble));
 }
 
 /* the termination of the RungeKutta4 integration method */
@@ -226,87 +224,77 @@ void XXRungeKutta4Step (void)
 	XXInteger index;
 	XXDouble rktime;
 
-	/* check if we have states at all */
-	if (4 > 0)
+	/* This model has 4 states */
+	/*********************************************************************************/
+	/*          calculate intermediate state results q1, q2, q3 and q4               */
+	/*********************************************************************************/
+
+	/* cache the simulation time */
+	rktime = xx_time;
+
+	/* the q0 will hold the value of the last evaluation. This is used multiple times
+	   so remember the complete state array in this vector. */
+	memcpy (xx_q0, xx_s, xx_STATE_SIZE * sizeof (XXDouble));
+
+	/* calculate q1 = f (states, t) * dt  =  rates * dt  */
+	for (index = 0; index < xx_STATE_SIZE; index++)
 	{
-		/*********************************************************************************/
-		/*          calculate intermediate state results q1, q2, q3 and q4               */
-		/*********************************************************************************/
+		/* set the intermediate q1 */
+		xx_q1 [index] = xx_R [index] * xx_step_size;
 
-		/* cache the simulation time */
-		rktime = xx_time;
-
-		/* the q0 will hold the value of the last evaluation. This is used multiple times
-		   so remember the complete state array in this vector. */
-		memcpy (xx_q0, xx_s, 4 * sizeof (XXDouble));
-
-		/* calculate q1 = f (states, t) * dt  =  rates * dt  */
-		for (index = 0; index < 4; index++)
-		{
-			/* set the intermediate q1 */
-			xx_q1 [index] = xx_R [index] * xx_step_size;
-
-			/* set the new states to use  for q2 */
-			xx_s [index] = xx_q0 [index] + xx_q1 [index] / 2;
-		}
-
-		/* calculate q2 = f (states + q1 / 2, t + dt / 2) * dt  */
-		xx_time = rktime + xx_step_size / 2;
-
-		xx_major = XXFALSE;
-
-		XXCalculateDynamic ();
-		memcpy (xx_q2, xx_R, 4 * sizeof (XXDouble));
-
-		/* for each state */
-		for (index = 0; index < 4; index++)
-		{
-			/* set the ultimate q2 */
-			xx_q2 [index] = xx_q2 [index] * xx_step_size;
-
-			/* set the new states to use */
-			xx_s [index] = xx_q0 [index] + xx_q2 [index] / 2;
-		}
-
-		/* calculate q3 = f (states + q2 / 2, t + dt / 2) * dt  */
-		XXCalculateDynamic ();
-		memcpy (xx_q3, xx_R, 4 * sizeof (XXDouble));
-
-		/* for each state */
-		for (index = 0; index < 4; index++)
-		{
-			/* set the ultimate q3 */
-			xx_q3 [index] = xx_q3 [index] * xx_step_size;
-
-			/* set the new states */
-			xx_s [index] = xx_q0 [index] + xx_q3 [index];
-		}
-
-		/* calculate q4 = f (states + q3, t + dt) * dt */
-		xx_time = rktime + xx_step_size;
-		XXCalculateDynamic ();
-		memcpy (xx_q4, xx_R, 4 * sizeof (XXDouble));
-
-		/* for each state */
-		for (index = 0; index < 4; index++)
-		{
-			/* set the ultimate q4 */
-			xx_q4 [index] = xx_q4 [index] * xx_step_size;
-
-			/*********************************************************************************/
-			/*          calculate the next state from the intermediate results               */
-			/*********************************************************************************/
-
-			/* calculate the next state = classical Runge-Kutta integration step */
-			xx_s [index] = xx_q0 [index] +
-			xx_q1 [index] / 6 + xx_q2 [index] / 3 + xx_q3 [index] / 3 + xx_q4 [index] / 6;
-		}
+		/* set the new states to use  for q2 */
+		xx_s [index] = xx_q0 [index] + xx_q1 [index] / 2;
 	}
-	else
+
+	/* calculate q2 = f (states + q1 / 2, t + dt / 2) * dt  */
+	xx_time = rktime + xx_step_size / 2;
+
+	xx_major = XXFALSE;
+
+	XXCalculateDynamic ();
+	memcpy (xx_q2, xx_R, xx_STATE_SIZE * sizeof (XXDouble));
+
+	/* for each state */
+	for (index = 0; index < xx_STATE_SIZE; index++)
 	{
-		/* no states in the model */
-		/* increment the simulation time */
-		xx_time += xx_step_size;
+		/* set the ultimate q2 */
+		xx_q2 [index] = xx_q2 [index] * xx_step_size;
+
+		/* set the new states to use */
+		xx_s [index] = xx_q0 [index] + xx_q2 [index] / 2;
+	}
+
+	/* calculate q3 = f (states + q2 / 2, t + dt / 2) * dt  */
+	XXCalculateDynamic ();
+	memcpy (xx_q3, xx_R, xx_STATE_SIZE * sizeof (XXDouble));
+
+	/* for each state */
+	for (index = 0; index < xx_STATE_SIZE; index++)
+	{
+		/* set the ultimate q3 */
+		xx_q3 [index] = xx_q3 [index] * xx_step_size;
+
+		/* set the new states */
+		xx_s [index] = xx_q0 [index] + xx_q3 [index];
+	}
+
+	/* calculate q4 = f (states + q3, t + dt) * dt */
+	xx_time = rktime + xx_step_size;
+	XXCalculateDynamic ();
+	memcpy (xx_q4, xx_R, xx_STATE_SIZE * sizeof (XXDouble));
+
+	/* for each state */
+	for (index = 0; index < xx_STATE_SIZE; index++)
+	{
+		/* set the ultimate q4 */
+		xx_q4 [index] = xx_q4 [index] * xx_step_size;
+
+		/*********************************************************************************/
+		/*          calculate the next state from the intermediate results               */
+		/*********************************************************************************/
+
+		/* calculate the next state = classical Runge-Kutta integration step */
+		xx_s[index] = xx_q0[index] + (xx_q1[index] + xx_q2[index] + xx_q2[index] + xx_q3[index] + xx_q3[index] + xx_q4[index]) * OneOverSix;
 	}
 
 	xx_major = XXTRUE;

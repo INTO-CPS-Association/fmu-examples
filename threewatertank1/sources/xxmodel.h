@@ -3,13 +3,13 @@
  *
  *  file:  src\xxmodel.h
  *  subm:  WaterTanks1
- *  model: threetankco
- *  expmt: threetankco
- *  date:  November 6, 2015
- *  time:  2:34:26 pm
- *  user:  INTO-CPS
- *  from:  20-sim 4.5 Professional Single
- *  build: 4.5.4.6171
+ *  model: threetank
+ *  expmt: threetank
+ *  date:  February 3, 2016
+ *  time:  2:33:24 PM
+ *  user:  Controllab Internal
+ *  from:  Controllab Products B.V., 20-sim 4.7 Professional Single
+ *  build: 4.7.1000.6732
  **********************************************************/
 
 /* This file describes the model functions
@@ -23,7 +23,6 @@
 
 /* Our own include files */
 #include "xxtypes.h"
-#include "xxmatrix.h"
 
 /* Simulation variables */
 extern XXDouble xx_start_time;
@@ -39,24 +38,20 @@ extern XXBoolean xx_stop_simulation;
 extern XXDouble xx_MEMORY[];
 extern XXDouble* u;
 extern XXDouble* y;
-extern XXDouble* xx_C;
 extern XXDouble* xx_P;
 extern XXDouble* xx_I;
 extern XXDouble* xx_V;
 extern XXDouble* xx_s;
 extern XXDouble* xx_R;
-extern XXMatrix xx_M[];
 extern XXDouble xx_U[];
 
 /* The names of the variables as used in the arrays above
    uncomment this if you need the names (see source file too)
-extern XXString xx_constant_names[];
 extern XXString xx_parameter_names[];
 extern XXString xx_initial_value_names[];
 extern XXString xx_variable_names[];
 extern XXString xx_state_names[];
 extern XXString xx_rate_names[];
-extern XXString xx_matrix_names[];
 */
 
 /* Initialization methods */
@@ -70,6 +65,7 @@ void XXCalculateInput (void);
 void XXCalculateDynamic (void);
 void XXCalculateOutput (void);
 void XXCalculateFinal (void);
+
 
 #endif
 
