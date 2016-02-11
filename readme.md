@@ -7,4 +7,4 @@ Each FMU is a folder containing:
  - a `modelDescription.xml` file
  - a copy of the `CMakeLists.txt` file with the name set to the name of the fmu folder
 
-The build script looks over folders and compiles and assembles the FMUs.
+The build script loops over folders and compiles and assembles the FMUs. It tracks the `development` branch.
