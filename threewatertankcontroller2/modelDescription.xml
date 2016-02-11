@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="WaterTankController" guid="{8c4e810f-3df3-4a00-8276-176fa3c9f003}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="WaterTankController" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false" canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+<DefaultExperiment startTime="0.0" stopTime="20.0" stepSize="0.02" />
+<ModelVariables>
+<ScalarVariable name="wt3_level" valueReference="2" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="wt3_valve" valueReference="3" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wt3_max" valueReference="0" variability="tunable" causality="parameter">
+<Real start="2.0" />
+</ScalarVariable>
+<ScalarVariable name="wt3_min" valueReference="1" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="2" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
