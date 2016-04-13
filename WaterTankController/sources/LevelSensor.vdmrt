@@ -1,0 +1,10 @@
+class LevelSensor
+
+	instance variables
+		level :	real := 0.0;
+
+	operations
+		public getLevel : () ==> real
+		getLevel () == return level;
+
+end LevelSensor
