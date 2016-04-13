@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="Body_Block" guid="{94874951-8049-4bed-a719-067e97f77eb4}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="Body_Block" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="false" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false" canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+<DefaultExperiment startTime="0.0" stopTime="5.0" stepSize="1.0e-6" />
+<ModelVariables>
+<ScalarVariable name="Battery.servo_left_j" valueReference="206" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.output" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.servo_right_j" valueReference="209" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.total_energy_used" valueReference="69" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="battery_initial_energy" valueReference="1" description="initial battery energy" variability="tunable" causality="parameter">
+<Real start="2500.0" />
+</ScalarVariable>
+<ScalarVariable name="individual_sensor_power" valueReference="2" description="power used by each sensor;" variability="tunable" causality="parameter">
+<Real start="0.5" />
+</ScalarVariable>
+<ScalarVariable name="controller_power" valueReference="3" description="power used by controller;" variability="tunable" causality="parameter">
+<Real start="7.0" />
+</ScalarVariable>
+<ScalarVariable name="Battery.powerOn" valueReference="4" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="Battery.powerOff" valueReference="5" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_used[0]" valueReference="70" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_used[1]" valueReference="71" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_used[2]" valueReference="72" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_used[3]" valueReference="73" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_used[4]" valueReference="74" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.remainingEnergy" valueReference="75" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.sensorEnergyUsed" valueReference="76" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.controllerEnergyUsed" valueReference="77" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.batteryPercentage" valueReference="78" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.batteryMeterOffset" valueReference="79" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.batteryColour[0]" valueReference="80" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.batteryColour[1]" valueReference="81" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.batteryColour[2]" valueReference="82" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.effort[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.effort[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p1.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p1.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p2.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p2.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p3.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p3.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p1.f[0]" valueReference="85" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p1.f[1]" valueReference="86" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p2.f[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p2.f[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p3.f[0]" valueReference="83" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl.p3.f[1]" valueReference="84" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.p1.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.p1.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.p1.f[0]" valueReference="85" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.p1.f[1]" valueReference="86" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.p2.e" valueReference="87" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.p2.f" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="axle_offset" valueReference="6" variability="tunable" causality="parameter">
+<Real start="0.0185" />
+</ScalarVariable>
+<ScalarVariable name="axle_half_width" valueReference="7" variability="tunable" causality="parameter">
+<Real start="0.049" />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.r[0]" valueReference="88" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fl_to_Tl.r[1]" valueReference="89" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.effort[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.effort[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p1.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p1.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p2.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p2.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p3.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p3.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p1.f[0]" valueReference="92" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p1.f[1]" valueReference="93" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p2.f[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p2.f[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p3.f[0]" valueReference="90" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr.p3.f[1]" valueReference="91" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.p1.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.p1.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.p1.f[0]" valueReference="92" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.p1.f[1]" valueReference="93" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.p2.e" valueReference="94" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.p2.f" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.r[0]" valueReference="95" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Fr_to_Tr.r[1]" valueReference="96" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.inertia.p.f" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_inertia_without_battery" valueReference="8" description="from Visser's original model" variability="tunable" causality="parameter">
+<Real start="6.6e-4" />
+</ScalarVariable>
+<ScalarVariable name="battery_mass" valueReference="9" description="mass of battery" variability="tunable" causality="parameter">
+<Real start="0.415" />
+</ScalarVariable>
+<ScalarVariable name="battery_length" valueReference="10" description="length of battery pack" variability="tunable" causality="parameter">
+<Real start="0.12" />
+</ScalarVariable>
+<ScalarVariable name="battery_width" valueReference="11" description="width of battery pack" variability="tunable" causality="parameter">
+<Real start="0.03" />
+</ScalarVariable>
+<ScalarVariable name="battery_cog_offset" valueReference="12" description="battery cog guessed at 5cm behind the axel line" variability="tunable" causality="parameter">
+<Real start="0.05" />
+</ScalarVariable>
+<ScalarVariable name="body.inertia.i" valueReference="97" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.inertia.inertia_due_to_battery" valueReference="98" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.p.f[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.p.f[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_mass_without_battery" valueReference="13" description="from Visser's original model" variability="tunable" causality="parameter">
+<Real start="0.414" />
+</ScalarVariable>
+<ScalarVariable name="body.mass.i[0]" valueReference="99" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.i[1]" valueReference="100" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.i[2]" valueReference="101" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.i[3]" valueReference="102" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p1.e[0]" valueReference="127" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p1.e[1]" valueReference="128" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p1.f[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p1.f[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p2.e[0]" valueReference="105" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p2.e[1]" valueReference="106" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p2.f[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.p2.f[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.theta" valueReference="126" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.R[0]" valueReference="107" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.R[1]" valueReference="108" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.R[2]" valueReference="109" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.MTF.R[3]" valueReference="110" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.flow" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.p1.e" valueReference="87" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.p2.e" valueReference="94" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.p3.e" valueReference="218" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.p1.f" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.p2.f" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.omega.p3.f" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.position.position[0]" valueReference="111" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.position.position[1]" valueReference="112" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="pos_x" valueReference="0" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="pos_y" valueReference="0" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="initial_position[0]" valueReference="14" description="robot design" variability="tunable" causality="parameter">
+<Real start="0.138" />
+</ScalarVariable>
+<ScalarVariable name="initial_position[1]" valueReference="15" description="robot design" variability="tunable" causality="parameter">
+<Real start="-0.08" />
+</ScalarVariable>
+<ScalarVariable name="initial_position[2]" valueReference="16" description="robot design" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="body.R.p.e[0]" valueReference="113" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.p.e[1]" valueReference="114" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.p.f[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.p.f[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="mu" valueReference="17" description="power usage" variability="tunable" causality="parameter">
+<Real start="1332.0" />
+</ScalarVariable>
+<ScalarVariable name="body.R.bladePosition" valueReference="18" variability="tunable" causality="parameter">
+<Real start="0.08" />
+</ScalarVariable>
+<ScalarVariable name="body.R.r[0]" valueReference="115" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.r[1]" valueReference="116" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.r[2]" valueReference="117" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.r[3]" valueReference="118" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.frictionDueToBattery" valueReference="119" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.frictionDueToRobot" valueReference="120" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.R.totalFriction" valueReference="121" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Splitter1.input" valueReference="126" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Splitter1.output1" valueReference="126" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.Splitter1.output2" valueReference="126" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.position[0]" valueReference="111" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.position[1]" valueReference="112" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.state[0]" valueReference="122" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.state[1]" valueReference="123" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.state[2]" valueReference="124" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.state[3]" valueReference="125" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.state_mux.angle" valueReference="126" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.theta.output" valueReference="126" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.flow[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.flow[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p1.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p1.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p2.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p2.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p3.e[0]" valueReference="127" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p3.e[1]" valueReference="128" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p1.f[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p1.f[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p2.f[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p2.f[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p3.f[0]" valueReference="103" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v.p3.f[1]" valueReference="104" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.flow[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.flow[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p1.e[0]" valueReference="105" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p1.e[1]" valueReference="106" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p2.e[0]" valueReference="219" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p2.e[1]" valueReference="220" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p3.e[0]" valueReference="113" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p3.e[1]" valueReference="114" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p1.f[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p1.f[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p2.f[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p2.f[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p3.f[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.v_inertial.p3.f[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.robot_state[0]" valueReference="122" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.robot_state[1]" valueReference="123" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.robot_state[2]" valueReference="124" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.robot_state[3]" valueReference="125" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_left.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_left.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_left.f[0]" valueReference="83" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_left.f[1]" valueReference="84" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_right.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_right.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_right.f[0]" valueReference="90" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.wheel_right.f[1]" valueReference="91" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.robot_x" valueReference="129" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.robot_y" valueReference="130" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.robot_z" valueReference="131" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.robot_theta" valueReference="132" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.input[0]" valueReference="122" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.input[1]" valueReference="123" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.input[2]" valueReference="124" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux.input[3]" valueReference="125" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.AngleToLinearDistance.input" valueReference="204" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.AngleToLinearDistance.output" valueReference="133" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_resolution" valueReference="19" variability="tunable" causality="parameter">
+<Real start="44.0" />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Quantisize.input" valueReference="133" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Quantisize.output" valueReference="134" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Quantisize.lsb" valueReference="20" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Quantisize.q" valueReference="135" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Quantisize.half_lsb" valueReference="136" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.rotational_velocity.flow" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.rotational_velocity.p1.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.rotational_velocity.p2.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.rotational_velocity.p1.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.rotational_velocity.p2.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Splitter1.input" valueReference="204" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Splitter1.output1" valueReference="204" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.Splitter1.output2" valueReference="204" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.from_servo.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.from_servo.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.encoder_left_output" valueReference="134" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.to_wheel.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.to_wheel.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.motor_angle_out" valueReference="204" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.AngleToLinearDistance.input" valueReference="205" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.AngleToLinearDistance.output" valueReference="137" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Quantisize.input" valueReference="137" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Quantisize.output" valueReference="138" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Quantisize.lsb" valueReference="21" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Quantisize.q" valueReference="139" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Quantisize.half_lsb" valueReference="140" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.rotational_velocity.flow" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.rotational_velocity.p1.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.rotational_velocity.p2.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.rotational_velocity.p1.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.rotational_velocity.p2.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Splitter1.input" valueReference="205" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Splitter1.output1" valueReference="205" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.Splitter1.output2" valueReference="205" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.from_servo.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.from_servo.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.encoder_right_output" valueReference="138" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.to_wheel.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.to_wheel.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.motor_angle_out" valueReference="205" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="num_sensors" valueReference="22" description="setup" variability="tunable" causality="parameter">
+<Real start="2.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_radius" valueReference="23" variability="tunable" causality="parameter">
+<Real start="0.03325" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.flow" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p1.e" valueReference="227" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p2.e" valueReference="146" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p3.e" valueReference="149" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p4.e" valueReference="151" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p1.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p2.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p3.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.current.p4.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.p1.e" valueReference="151" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.p1.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.p2.e" valueReference="151" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.p2.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.friction.p.e" valueReference="141" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.friction.p.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.friction.r" valueReference="24" variability="tunable" causality="parameter">
+<Real start="0.0126" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.inductance.p.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.inductance.i" valueReference="25" variability="tunable" causality="parameter">
+<Real start="0.00171" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.output" valueReference="143" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.kp" valueReference="26" description="Proportional gain" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.tauI" valueReference="27" description="Integral time constant: tauI &gt; 0" variability="tunable" causality="parameter">
+<Real start="0.01" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.uP" valueReference="144" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.uI" valueReference="145" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.motor_constant.p1.e" valueReference="146" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.motor_constant.p1.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.motor_constant.p2.e" valueReference="147" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.motor_constant.p2.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.motor_constant.r" valueReference="28" variability="tunable" causality="parameter">
+<Real start="0.796" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.PlusMinus1.output" valueReference="228" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.PlusMinus1.plus1" valueReference="148" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.PlusMinus1.minus1" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.pwm_to_speed.input" valueReference="153" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.pwm_to_speed.output" valueReference="148" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.pwm_to_speed.K" valueReference="29" description="maximum rotational velocity of one wheel" variability="tunable" causality="parameter">
+<Real start="5.18" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.resistance.p.e" valueReference="149" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.resistance.p.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.resistance.r" valueReference="30" variability="tunable" causality="parameter">
+<Real start="8.2" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.flow" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.p1.e" valueReference="147" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.p2.e" valueReference="141" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.p3.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.p1.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.p2.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.rotational_velocity.p3.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage.p.e" valueReference="151" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage.p.f" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage.effort" valueReference="152" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage.batteryPower" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage.flow" valueReference="142" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage_limit.input" valueReference="143" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage_limit.output" valueReference="152" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage_limit.maximum" valueReference="31" variability="tunable" causality="parameter">
+<Real start="20.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.voltage_limit.minimum" valueReference="32" variability="tunable" causality="parameter">
+<Real start="-20.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.batteryPower" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.servoEnergy" valueReference="206" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.left_servo_input" valueReference="153" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.to_left_wheel.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.to_left_wheel.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.flow" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p1.e" valueReference="230" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p2.e" valueReference="159" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p3.e" valueReference="162" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p4.e" valueReference="164" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p1.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p2.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p3.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.current.p4.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.p1.e" valueReference="164" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.p1.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.p2.e" valueReference="164" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.p2.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.friction.p.e" valueReference="154" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.friction.p.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.friction.r" valueReference="33" variability="tunable" causality="parameter">
+<Real start="0.0126" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.inductance.p.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.inductance.i" valueReference="34" variability="tunable" causality="parameter">
+<Real start="0.00171" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.output" valueReference="156" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.kp" valueReference="35" description="Proportional gain" variability="tunable" causality="parameter">
+<Real start="1.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.tauI" valueReference="36" description="Integral time constant: tauI &gt; 0" variability="tunable" causality="parameter">
+<Real start="0.01" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.uP" valueReference="157" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.uI" valueReference="158" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.motor_constant.p1.e" valueReference="159" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.motor_constant.p1.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.motor_constant.p2.e" valueReference="160" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.motor_constant.p2.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.motor_constant.r" valueReference="37" variability="tunable" causality="parameter">
+<Real start="0.796" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.PlusMinus1.output" valueReference="231" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.PlusMinus1.plus1" valueReference="161" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.PlusMinus1.minus1" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.pwm_to_speed.input" valueReference="166" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.pwm_to_speed.output" valueReference="161" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.pwm_to_speed.K" valueReference="38" description="maximum rotational velocity of one wheel" variability="tunable" causality="parameter">
+<Real start="5.18" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.resistance.p.e" valueReference="162" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.resistance.p.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.resistance.r" valueReference="39" variability="tunable" causality="parameter">
+<Real start="8.2" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.flow" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.p1.e" valueReference="160" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.p2.e" valueReference="154" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.p3.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.p1.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.p2.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.rotational_velocity.p3.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage.p.e" valueReference="164" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage.p.f" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage.effort" valueReference="165" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage.batteryPower" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage.flow" valueReference="155" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage_limit.input" valueReference="156" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage_limit.output" valueReference="165" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage_limit.maximum" valueReference="40" variability="tunable" causality="parameter">
+<Real start="20.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.voltage_limit.minimum" valueReference="41" variability="tunable" causality="parameter">
+<Real start="-20.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.batteryPower" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.servoEnergy" valueReference="209" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.right_servo_input" valueReference="166" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.to_right_wheel.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.to_right_wheel.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter4.input" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter4.output1" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter4.output2" valueReference="68" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.C.p.e" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.C.c" valueReference="42" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.I.p.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.I.i" valueReference="43" variability="tunable" causality="parameter">
+<Real start="1.244e-7" />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.x.e" valueReference="175" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.x.f" valueReference="168" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.xy.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.xy.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.xy.f[0]" valueReference="83" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.xy.f[1]" valueReference="84" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.y.e" valueReference="174" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.powermux_left.y.f" valueReference="171" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.R.p.e" valueReference="172" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.R.p.f" valueReference="168" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.R.r" valueReference="44" variability="tunable" causality="parameter">
+<Real start="100000.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.flow" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.p1.e" valueReference="233" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.p2.e" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.p3.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.p1.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.p2.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotational_velocity.p3.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotation_to_translation.p1.e" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotation_to_translation.p1.f" valueReference="173" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotation_to_translation.p2.e" valueReference="174" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.rotation_to_translation.p2.f" valueReference="171" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.xdot.flow" valueReference="168" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.xdot.p1.e" valueReference="175" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.xdot.p2.e" valueReference="172" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.xdot.p1.f" valueReference="168" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.xdot.p2.f" valueReference="168" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.effort" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.p1.e" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.p2.e" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.p3.e" valueReference="167" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.p1.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.p2.f" valueReference="232" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.ZeroJunction1.p3.f" valueReference="173" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.to_body.e[0]" valueReference="169" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.to_body.e[1]" valueReference="170" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.to_body.f[0]" valueReference="83" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.to_body.f[1]" valueReference="84" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.y.e" valueReference="150" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.y.f" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.C.p.e" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.C.c" valueReference="45" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.I.p.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.I.i" valueReference="46" variability="tunable" causality="parameter">
+<Real start="1.244e-7" />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.x.e" valueReference="184" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.x.f" valueReference="177" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.xy.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.xy.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.xy.f[0]" valueReference="90" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.xy.f[1]" valueReference="91" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.y.e" valueReference="183" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.powermux_right.y.f" valueReference="180" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.R2.p.e" valueReference="181" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.R2.p.f" valueReference="177" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.R2.r" valueReference="47" variability="tunable" causality="parameter">
+<Real start="100000.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.flow" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.p1.e" valueReference="235" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.p2.e" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.p3.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.p1.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.p2.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotational_velocity.p3.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotation_to_translation.p1.e" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotation_to_translation.p1.f" valueReference="182" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotation_to_translation.p2.e" valueReference="183" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.rotation_to_translation.p2.f" valueReference="180" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.xdot.flow" valueReference="177" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.xdot.p1.e" valueReference="184" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.xdot.p2.e" valueReference="181" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.xdot.p1.f" valueReference="177" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.xdot.p2.f" valueReference="177" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.effort" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.p1.e" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.p2.e" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.p3.e" valueReference="176" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.p1.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.p2.f" valueReference="234" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.ZeroJunction1.p3.f" valueReference="182" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.to_body.e[0]" valueReference="178" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.to_body.e[1]" valueReference="179" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.to_body.f[0]" valueReference="90" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.to_body.f[1]" valueReference="91" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.y.e" valueReference="163" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.y.f" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="total_energy_used" valueReference="185" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_theta" valueReference="186" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_x" valueReference="187" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_y" valueReference="188" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_z" valueReference="189" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left_output" valueReference="190" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right_output" valueReference="191" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right_rotation" valueReference="192" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left_input" valueReference="193" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right_input" valueReference="194" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_left_rotation" valueReference="195" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.controllerEnergy_dot" valueReference="216" description="power used by controller;" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.controllerEnergy" valueReference="196" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.totalSensorPower" valueReference="217" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Battery.sensorEnergy" valueReference="197" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.inertia.p.e" valueReference="218" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.inertia.state" valueReference="198" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.inertia.state_initial" valueReference="50" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="body.mass.p.e[0]" valueReference="219" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.p.e[1]" valueReference="220" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.state[0]" valueReference="199" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.state[1]" valueReference="200" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.mass.state_initial[0]" valueReference="51" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="body.mass.state_initial[1]" valueReference="52" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="body.position.velocity[0]" valueReference="221" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.position.velocity[1]" valueReference="222" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.position.velocity_int[0]" valueReference="201" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.position.velocity_int[1]" valueReference="202" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.position.velocity_int_initial[0]" valueReference="53" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="body.position.velocity_int_initial[1]" valueReference="54" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="body.theta.input" valueReference="223" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.theta.input_int" valueReference="203" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="body.theta.input_int_initial" valueReference="55" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.motor_angle.input" valueReference="224" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_left.motor_angle.output" valueReference="204" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.motor_angle.input" valueReference="225" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="encoder_right.motor_angle.output" valueReference="205" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.E_dot" valueReference="226" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.E" valueReference="206" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.EnergyIntoLeftMotor.E_initial" valueReference="58" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.inductance.p.e" valueReference="227" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.inductance.state" valueReference="207" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.inductance.state_initial" valueReference="59" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.error" valueReference="228" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.error_int" valueReference="208" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_left.internal_controller.error_int_initial" valueReference="60" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.E_dot" valueReference="229" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.E" valueReference="209" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.EnergyIntoRightMotor.E_initial" valueReference="61" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.inductance.p.e" valueReference="230" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.inductance.state" valueReference="210" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.inductance.state_initial" valueReference="62" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.error" valueReference="231" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.error_int" valueReference="211" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="servo_right.internal_controller.error_int_initial" valueReference="63" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.C.p.f" valueReference="232" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.C.state" valueReference="212" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.C.state_initial" valueReference="64" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.I.p.e" valueReference="233" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.I.state" valueReference="213" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_left.I.state_initial" valueReference="65" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.C.p.f" valueReference="234" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.C.state" valueReference="214" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.C.state_initial" valueReference="66" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.I.p.e" valueReference="235" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.I.state" valueReference="215" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="wheel_right.I.state_initial" valueReference="67" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="435" />
+<Unknown index="436" />
+<Unknown index="437" />
+<Unknown index="438" />
+<Unknown index="439" />
+<Unknown index="440" />
+<Unknown index="441" />
+<Unknown index="442" />
+<Unknown index="445" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
