@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription fmiVersion="2.0" modelName="Sensor_Block" guid="{9737bfcb-3243-4f09-ac5c-9ac4872e3d94}" generationTool="20-sim" numberOfEventIndicators="0" copyright="Controllab Products B.V." license="-">
+<CoSimulation modelIdentifier="Sensor_Block" needsExecutionTool="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" maxOutputDerivativeOrder="0" canRunAsynchronuously="false" canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" canGetAndSetFMUstate="false" canSerializeFMUstate="false" providesDirectionalDerivative="false" />
+<DefaultExperiment startTime="0.0" stopTime="30.0" stepSize="0.01" />
+<ModelVariables>
+<ScalarVariable name="Demux4.output1" valueReference="503299" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux4.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux4.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Demux4.output2" valueReference="503300" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_position_x" valueReference="0" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_position_y" valueReference="1" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_fail_time" valueReference="2" description="realistic and faulty behaviour" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="ambient_light" valueReference="3" description="ambient light level in Watts" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="noise_level" valueReference="4" description="number of lsb's that are noisy" variability="tunable" causality="parameter">
+<Integer start="0" />
+</ScalarVariable>
+<ScalarVariable name="id_1.output" valueReference="503301" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="id_1.C" valueReference="5" variability="tunable" causality="parameter">
+<Integer start="1" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.input" valueReference="503316" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.output" valueReference="503302" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.bits" valueReference="6" description="quantization levels (bits)" variability="tunable" causality="parameter">
+<Real start="8.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.minimum" valueReference="7" description="minimum output value" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.maximum" valueReference="8" description="minimum output value" variability="tunable" causality="parameter">
+<Real start="255.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.hold_signal" valueReference="503303" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.windowed_signal" valueReference="503304" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.quantisized_signal" valueReference="503305" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.lsb" valueReference="503306" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.half_lsb" valueReference="503307" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.AD_8bit.noise_value" valueReference="503308" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.ambient_light.input" valueReference="503317" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.ambient_light.output" valueReference="503309" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.ambient_light.led_power" valueReference="9" variability="tunable" causality="parameter">
+<Real start="5.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.ambient_light.rx_power_off" valueReference="10" variability="tunable" causality="parameter">
+<Real start="0.5" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.ambient_light.rx_power_on" valueReference="11" variability="tunable" causality="parameter">
+<Real start="4.5" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.ambient_light.reflected_power" valueReference="503310" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.robot_state[0]" valueReference="503505" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.robot_state[1]" valueReference="503506" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.robot_state[2]" valueReference="503507" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.robot_state[3]" valueReference="503508" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.sensor_position[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.sensor_position[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.id" valueReference="503313" variability="discrete" causality="local">
+<Integer />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.rotated_x" valueReference="503314" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.calculate_sensor_position.rotated_y" valueReference="503315" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.percentageTo8BitValue.input" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.percentageTo8BitValue.output" valueReference="503316" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.percentageTo8BitValue.K" valueReference="12" description="gain" variability="tunable" causality="parameter">
+<Real start="255.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_to_reflectivity.raw_map_reading" valueReference="503500" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_to_reflectivity.reflectivity" valueReference="503317" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_to_reflectivity.lo_input" valueReference="13" variability="tunable" causality="parameter">
+<Real start="-1.6777216e7" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_to_reflectivity.hi_input" valueReference="14" variability="tunable" causality="parameter">
+<Real start="-1.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_to_reflectivity.lo_output" valueReference="15" variability="tunable" causality="parameter">
+<Real start="0.1" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_to_reflectivity.hi_output" valueReference="16" variability="tunable" causality="parameter">
+<Real start="0.9" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Gain.input" valueReference="503318" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Gain.output" valueReference="503517" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Gain.sensor_response_factor" valueReference="17" description="gain" variability="tunable" causality="parameter">
+<Real start="223.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.PlusMinus.output" valueReference="503318" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.PlusMinus.plus1" valueReference="503309" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.PlusMinus.minus1" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Splitter1.input" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Splitter1.output1" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Splitter1.output2" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.input" valueReference="503309" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.output" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.Splitter2.input" valueReference="503319" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.Splitter2.output1" valueReference="503319" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.split_id.input" valueReference="503319" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.split_id.output1" valueReference="503319" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.split_id.output2" valueReference="503319" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.stuck_fault.sensor_position" valueReference="503302" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.stuck_fault.sensor_position_out" valueReference="503302" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.stuck_fault.id" valueReference="503319" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.sensor_position[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.sensor_position[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.id" valueReference="503319" variability="discrete" causality="local">
+<Integer />
+</ScalarVariable>
+<ScalarVariable name="lf_1.raw_map_reading" valueReference="503500" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.robot_state[0]" valueReference="503505" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.robot_state[1]" valueReference="503506" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.robot_state[2]" valueReference="503507" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.robot_state[3]" valueReference="503508" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.lf_1_sensor_reading" valueReference="503302" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.row" valueReference="503482" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.column" valueReference="503483" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.outputValue" valueReference="503320" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.i" valueReference="503321" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.cont" valueReference="503322" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.x_count" valueReference="503323" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.y_count" valueReference="503324" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.x_index" valueReference="503325" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.y_index" valueReference="503326" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.x_membership" valueReference="503327" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.y_membership" valueReference="503328" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.x_index_inc" valueReference="503329" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.y_index_inc" valueReference="503330" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.left_top" valueReference="503331" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.right_top" valueReference="503332" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.left_bottom" valueReference="503333" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.right_bottom" valueReference="503334" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.output_" valueReference="503335" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.input_x_" valueReference="503336" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile.input_y_" valueReference="503337" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.row" valueReference="503484" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.column" valueReference="503485" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.outputValue" valueReference="503338" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.i" valueReference="503339" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.cont" valueReference="503340" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.x_count" valueReference="503341" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.y_count" valueReference="503342" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.x_index" valueReference="503343" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.y_index" valueReference="503344" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.x_membership" valueReference="503345" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.y_membership" valueReference="503346" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.x_index_inc" valueReference="503347" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.y_index_inc" valueReference="503348" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.left_top" valueReference="503349" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.right_top" valueReference="503350" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.left_bottom" valueReference="503351" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.right_bottom" valueReference="503352" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.output_" valueReference="503353" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.input_x_" valueReference="503354" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile1.input_y_" valueReference="503355" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.row" valueReference="503486" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.column" valueReference="503487" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.outputValue" valueReference="503356" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.i" valueReference="503357" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.cont" valueReference="503358" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.x_count" valueReference="503359" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.y_count" valueReference="503360" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.x_index" valueReference="503361" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.y_index" valueReference="503362" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.x_membership" valueReference="503363" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.y_membership" valueReference="503364" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.x_index_inc" valueReference="503365" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.y_index_inc" valueReference="503366" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.left_top" valueReference="503367" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.right_top" valueReference="503368" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.left_bottom" valueReference="503369" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.right_bottom" valueReference="503370" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.output_" valueReference="503371" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.input_x_" valueReference="503372" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile2.input_y_" valueReference="503373" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.row" valueReference="503488" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.column" valueReference="503489" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.outputValue" valueReference="503374" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.i" valueReference="503375" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.cont" valueReference="503376" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.x_count" valueReference="503377" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.y_count" valueReference="503378" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.x_index" valueReference="503379" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.y_index" valueReference="503380" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.x_membership" valueReference="503381" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.y_membership" valueReference="503382" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.x_index_inc" valueReference="503383" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.y_index_inc" valueReference="503384" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.left_top" valueReference="503385" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.right_top" valueReference="503386" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.left_bottom" valueReference="503387" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.right_bottom" valueReference="503388" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.output_" valueReference="503389" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.input_x_" valueReference="503390" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile3.input_y_" valueReference="503391" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.row" valueReference="503490" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.column" valueReference="503491" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.outputValue" valueReference="503392" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.i" valueReference="503393" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.cont" valueReference="503394" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.x_count" valueReference="503395" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.y_count" valueReference="503396" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.x_index" valueReference="503397" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.y_index" valueReference="503398" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.x_membership" valueReference="503399" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.y_membership" valueReference="503400" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.x_index_inc" valueReference="503401" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.y_index_inc" valueReference="503402" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.left_top" valueReference="503403" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.right_top" valueReference="503404" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.left_bottom" valueReference="503405" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.right_bottom" valueReference="503406" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.output_" valueReference="503407" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.input_x_" valueReference="503408" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile4.input_y_" valueReference="503409" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.row" valueReference="503492" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.column" valueReference="503493" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.outputValue" valueReference="503410" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.i" valueReference="503411" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.cont" valueReference="503412" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.x_count" valueReference="503413" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.y_count" valueReference="503414" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.x_index" valueReference="503415" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.y_index" valueReference="503416" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.x_membership" valueReference="503417" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.y_membership" valueReference="503418" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.x_index_inc" valueReference="503419" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.y_index_inc" valueReference="503420" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.left_top" valueReference="503421" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.right_top" valueReference="503422" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.left_bottom" valueReference="503423" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.right_bottom" valueReference="503424" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.output_" valueReference="503425" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.input_x_" valueReference="503426" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile5.input_y_" valueReference="503427" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.row" valueReference="503494" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.column" valueReference="503495" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.outputValue" valueReference="503428" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.i" valueReference="503429" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.cont" valueReference="503430" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.x_count" valueReference="503431" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.y_count" valueReference="503432" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.x_index" valueReference="503433" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.y_index" valueReference="503434" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.x_membership" valueReference="503435" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.y_membership" valueReference="503436" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.x_index_inc" valueReference="503437" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.y_index_inc" valueReference="503438" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.left_top" valueReference="503439" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.right_top" valueReference="503440" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.left_bottom" valueReference="503441" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.right_bottom" valueReference="503442" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.output_" valueReference="503443" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.input_x_" valueReference="503444" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile6.input_y_" valueReference="503445" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.row" valueReference="503496" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.column" valueReference="503497" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.outputValue" valueReference="503446" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.i" valueReference="503447" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.cont" valueReference="503448" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.x_count" valueReference="503449" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.y_count" valueReference="503450" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.x_index" valueReference="503451" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.y_index" valueReference="503452" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.x_membership" valueReference="503453" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.y_membership" valueReference="503454" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.x_index_inc" valueReference="503455" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.y_index_inc" valueReference="503456" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.left_top" valueReference="503457" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.right_top" valueReference="503458" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.left_bottom" valueReference="503459" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.right_bottom" valueReference="503460" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.output_" valueReference="503461" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.input_x_" valueReference="503462" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile7.input_y_" valueReference="503463" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.row" valueReference="503498" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.column" valueReference="503499" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.outputValue" valueReference="503464" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.i" valueReference="503465" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.cont" valueReference="503466" variability="discrete" causality="local">
+<Boolean />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.x_count" valueReference="503467" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.y_count" valueReference="503468" description="Number of x values in first row and y values in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.x_index" valueReference="503469" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.y_index" valueReference="503470" description="Position of x input in first row and y input in first column of 2D table." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.x_membership" valueReference="503471" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.y_membership" valueReference="503472" description="Percentage of positioning in between (row or column) values for input (x or y)." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.x_index_inc" valueReference="503473" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.y_index_inc" valueReference="503474" description="Pointers to table data points fed into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.left_top" valueReference="503475" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.right_top" valueReference="503476" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.left_bottom" valueReference="503477" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.right_bottom" valueReference="503478" description="Data points plugged into the interpolation formula." variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.output_" valueReference="503479" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.input_x_" valueReference="503480" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.DataFromFile8.input_y_" valueReference="503481" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset.x" valueReference="503482" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset.y" valueReference="503483" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset.xOffset" valueReference="503280" variability="tunable" causality="parameter">
+<Real start="-0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset.yOffset" valueReference="503281" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset1.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset1.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset1.x" valueReference="503484" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset1.y" valueReference="503485" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset1.xOffset" valueReference="503282" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset1.yOffset" valueReference="503283" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset2.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset2.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset2.x" valueReference="503486" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset2.y" valueReference="503487" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset2.xOffset" valueReference="503284" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset2.yOffset" valueReference="503285" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset3.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset3.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset3.x" valueReference="503488" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset3.y" valueReference="503489" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset3.xOffset" valueReference="503286" variability="tunable" causality="parameter">
+<Real start="-0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset3.yOffset" valueReference="503287" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset4.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset4.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset4.x" valueReference="503490" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset4.y" valueReference="503491" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset4.xOffset" valueReference="503288" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset4.yOffset" valueReference="503289" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset5.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset5.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset5.x" valueReference="503492" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset5.y" valueReference="503493" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset5.xOffset" valueReference="503290" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset5.yOffset" valueReference="503291" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset6.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset6.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset6.x" valueReference="503494" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset6.y" valueReference="503495" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset6.xOffset" valueReference="503292" variability="tunable" causality="parameter">
+<Real start="-0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset6.yOffset" valueReference="503293" variability="tunable" causality="parameter">
+<Real start="-0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset7.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset7.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset7.x" valueReference="503496" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset7.y" valueReference="503497" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset7.xOffset" valueReference="503294" variability="tunable" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset7.yOffset" valueReference="503295" variability="tunable" causality="parameter">
+<Real start="-0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset8.sensorBasePosition[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset8.sensorBasePosition[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset8.x" valueReference="503498" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset8.y" valueReference="503499" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset8.xOffset" valueReference="503296" variability="tunable" causality="parameter">
+<Real start="0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.positionOffset8.yOffset" valueReference="503297" variability="tunable" causality="parameter">
+<Real start="-0.001" />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter1.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter1.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter1.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter1.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter1.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter1.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter2.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter2.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter2.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter2.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter2.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter2.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter3.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter3.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter3.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter3.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter3.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter3.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter4.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter4.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter4.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter4.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter4.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter4.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter5.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter5.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter5.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter5.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter5.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter5.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter6.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter6.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter6.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter6.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter6.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter6.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter7.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter7.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter7.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter7.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter7.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter7.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter8.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter8.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter8.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter8.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter8.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.Splitter8.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input1" valueReference="503320" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.output" valueReference="503500" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input2" valueReference="503338" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input3" valueReference="503356" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input4" valueReference="503374" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input5" valueReference="503392" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input6" valueReference="503410" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input7" valueReference="503428" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input8" valueReference="503446" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.totalSensorOutput.input9" valueReference="503464" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.sensor_position1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.sensor_position1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="map.sensor_value1" valueReference="503500" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.robot_x" valueReference="503501" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.robot_y" valueReference="503502" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.robot_z" valueReference="503503" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.robot_theta" valueReference="503504" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.output[0]" valueReference="503505" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.output[1]" valueReference="503506" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.output[2]" valueReference="503507" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Mux.output[3]" valueReference="503508" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter6.input[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter6.input[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter6.output1[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter6.output1[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter6.output2[0]" valueReference="503311" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="Splitter6.output2[1]" valueReference="503312" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1_sensor_position_x" valueReference="503509" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1_sensor_position_y" valueReference="503510" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1_sensor_reading" valueReference="503511" variability="continuous" causality="output">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="robot_theta" valueReference="503512" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="robot_x" valueReference="503513" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="robot_y" valueReference="503514" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="robot_z" valueReference="503515" variability="continuous" causality="input">
+<Real start="0.0" />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Integrate.input" valueReference="503517" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Integrate.output" valueReference="503516" variability="continuous" causality="local">
+<Real />
+</ScalarVariable>
+<ScalarVariable name="lf_1.response_delay.Integrate.initial" valueReference="503298" description="initial value" variability="fixed" causality="parameter">
+<Real start="0.0" />
+</ScalarVariable>
+</ModelVariables>
+<ModelStructure>
+<Outputs>
+<Unknown index="384" />
+<Unknown index="385" />
+<Unknown index="386" />
+</Outputs>
+</ModelStructure>
+</fmiModelDescription>
